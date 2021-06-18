@@ -1,5 +1,6 @@
 version: 0.2
-
+env:
+ yname: "yname"
 phases: 
     install:
         runtime-versions:
@@ -13,7 +14,7 @@ phases:
         commands:
             - echo "we are in the build block"
             - echo "we will run some tests"
-            - sed -i "s/using/'yname'/g" /var/www/html/index.html
+            - sed -i 'susing'yname'' /var/www/html/index.html
             - grep -Fq "Congratulations" index.html
     post_build:
         commands:
